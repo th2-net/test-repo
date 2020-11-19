@@ -14,4 +14,4 @@ jobs:
         node: [6, 8, 10]
     steps:
     - name: Set up Python 3.7
-      run: echo ${{ os }}-${{ node }}
+      run: echo ${{ matrix.os }}-${{ matrix.node }}
