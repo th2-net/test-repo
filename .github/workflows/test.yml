@@ -6,12 +6,17 @@ on:
 
 jobs:
   build-n-publish:
-    name: Build and Python distributions to PyPI
+    name: Build ${{ matrix.proto }}
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04]
-        node: [6, 8, 10]
+        proto:
+          - codec-fast
+          - codec-fix
+          - codec-itch
+          - codec-ntg
+          - codec-tcpip
+
     steps:
     - name: Set up Python 3.7
-      run: echo ${{ matrix.os }}-${{ matrix.node }}
+      run: echo ${{ matrix.proto }}
